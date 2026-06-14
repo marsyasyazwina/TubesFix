@@ -155,12 +155,8 @@ func DeleteAttendance(c *gin.Context) {
 func SearchAttendanceByStudent(c *gin.Context) {
 	name := c.Query("name")
 
-	students := make([]models.Student, data.StudentCount)
-	for i := 0; i < data.StudentCount; i++ {
-		students[i] = data.Students[i]
-	}
-
-	results := utils.SequentialSearchByName(students, name)
+	// Langsung kirim array statis + count, tanpa convert ke slice dulu
+	results := utils.SequentialSearchByName(data.Students, data.StudentCount, name)
 
 	c.JSON(http.StatusOK, models.Response{
 		Status:  200,
@@ -178,7 +174,10 @@ func generateAttendanceID() string {
 func updateStudentPercentage(nim string) {
 	total := 0
 	hadir := 0
-	perBulan := make(map[string]struct{ hadir int; total int })
+	perBulan := make(map[string]struct {
+		hadir int
+		total int
+	})
 
 	for i := 0; i < data.AttendanceCount; i++ {
 		if data.Attendances[i].NIM == nim {
