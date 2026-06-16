@@ -16,7 +16,6 @@ import Card from '../components/Card';
 
 const API_BASE_URL = 'http://localhost:8080/api';
 
-// Komponen RankingItem di dalam file yang sama
 const RankingItem = ({ rank, name, nim, persentase, totalHadir, totalTidak }) => {
   const getRankColor = () => {
     if (rank === 1) return '#FFD700';
@@ -63,7 +62,6 @@ export default function StatsScreen() {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
 
-  // Load ranking dari API
   const loadRanking = async (sort = 'desc') => {
     try {
       const response = await fetch(`${API_BASE_URL}/stats/ranking?sort=${sort}`);
@@ -72,7 +70,6 @@ export default function StatsScreen() {
       if (data.status === 200 && data.data && data.data.length > 0) {
         setRanking(data.data);
         
-        // Hitung rata-rata kehadiran
         const total = data.data.reduce((sum, s) => sum + (s.persentase || 0), 0);
         const avg = total / data.data.length;
         setSummary(prev => ({
@@ -89,7 +86,6 @@ export default function StatsScreen() {
     }
   };
 
-  // Load summary dari API today stats
   const loadSummary = async () => {
     try {
       const response = await fetch(`${API_BASE_URL}/stats/today`);
@@ -97,13 +93,13 @@ export default function StatsScreen() {
       
       if (data.status === 200 && data.data) {
         const stats = data.data;
-        const totalStudents = stats.totalStudents || 1;
+        const totalStudents = stats.total_students || 1;
         const izinSakitPersen = ((stats.izin || 0) + (stats.sakit || 0)) / totalStudents * 100;
         
         setSummary(prev => ({
           ...prev,
           totalHadir: stats.hadir || 0,
-          totalTidakHadir: stats.tidakHadir || 0,
+          totalTidakHadir: stats.tidak_hadir || 0,
           izinSakit: izinSakitPersen.toFixed(1)
         }));
       }
@@ -156,7 +152,6 @@ export default function StatsScreen() {
       <Text style={styles.title}>Statistik Kehadiran</Text>
       <Text style={styles.subtitle}>Semester Ganjil 2023/2024</Text>
 
-      {/* Summary Cards */}
       <View style={styles.summaryContainer}>
         <Card style={styles.summaryCard}>
           <Text style={styles.summaryNumber}>{summary.averagePercentage.toFixed(1)}%</Text>
@@ -166,7 +161,7 @@ export default function StatsScreen() {
 
         <Card style={styles.summaryCard}>
           <Text style={[styles.summaryNumber, styles.hadirNumber]}>{summary.totalHadir}</Text>
-          <Text style={styles.summaryLabel}>Hadir Hari Ini</Text>
+          <Text style={styles.summaryLabel}>Hadir Bulan Ini</Text>
           <Text style={styles.summaryTrend}>Efisiensi Input</Text>
         </Card>
 
@@ -177,7 +172,6 @@ export default function StatsScreen() {
         </Card>
       </View>
 
-      {/* Ranking Section */}
       <View style={styles.rankingSection}>
         <Text style={styles.sectionTitle}>Peringkat Kehadiran Mahasiswa</Text>
         <Text style={styles.sectionSubtitle}>Berdasarkan Persentase Kehadiran</Text>
@@ -215,14 +209,13 @@ export default function StatsScreen() {
               name={student.name}
               nim={student.nim}
               persentase={student.persentase}
-              totalHadir={student.totalHadir}
-              totalTidak={student.totalTidak}
+              totalHadir={student.total_hadir}
+              totalTidak={student.total_tidak}
             />
           ))
         )}
       </View>
 
-      {/* Info Card */}
       <Card style={styles.infoCard}>
         <Text style={styles.infoTitle}>ℹ️ Informasi</Text>
         <Text style={styles.infoText}>
@@ -369,7 +362,6 @@ const styles = StyleSheet.create({
     color: colors.onSurfaceVariant,
     marginBottom: spacing.xs,
   },
-  // Ranking Item styles
   rankingCard: {
     flexDirection: 'row',
     padding: spacing.md,

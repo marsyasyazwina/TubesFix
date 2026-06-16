@@ -26,8 +26,7 @@ export default function SearchScreen() {
   // ===== INPUT FIELDS =====
   const [searchName, setSearchName] = useState('');
   const [searchNIM, setSearchNIM] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
+  const [searchDate, setSearchDate] = useState('');
   
   // ===== RESULTS =====
   const [nameSearchResults, setNameSearchResults] = useState([]);
@@ -85,6 +84,30 @@ export default function SearchScreen() {
     return results;
   };
 
+  // ==================== BINARY SEARCH BY DATE ====================
+  const binarySearchByDate = (attendances, targetDate) => {
+    const sorted = [...attendances].sort((a, b) => {
+      if (a.date < b.date) return -1;
+      if (a.date > b.date) return 1;
+      return 0;
+    });
+
+    let left = 0;
+    let right = sorted.length - 1;
+
+    while (left <= right) {
+      const mid = Math.floor((left + right) / 2);
+      if (sorted[mid].date === targetDate) {
+        return sorted[mid];
+      } else if (sorted[mid].date < targetDate) {
+        left = mid + 1;
+      } else {
+        right = mid - 1;
+      }
+    }
+    return null;
+  };
+
   // ==================== PENCARIAN NIM + TANGGAL ====================
   const isValidDate = (date) => {
     if (!date) return true;
@@ -96,29 +119,25 @@ export default function SearchScreen() {
 
   const searchByNIMAndDate = () => {
     let results = [...allAttendances];
-    
+
     // Filter by NIM
     if (searchNIM.trim()) {
       results = results.filter(a => a.nim === searchNIM);
     }
-    
-    // Filter by start date
-    if (startDate.trim()) {
-      results = results.filter(a => a.date >= startDate);
+
+    // Binary search by exact date
+    if (searchDate.trim()) {
+      const found = binarySearchByDate(results, searchDate);
+      return found ? [found] : [];
     }
-    
-    // Filter by end date
-    if (endDate.trim()) {
-      results = results.filter(a => a.date <= endDate);
-    }
-    
+
     // Sort by date (newest first)
     results.sort((a, b) => {
       if (a.date > b.date) return -1;
       if (a.date < b.date) return 1;
       return 0;
     });
-    
+
     return results;
   };
 
@@ -126,7 +145,7 @@ export default function SearchScreen() {
   const handleSearch = () => {
     const hasNameInput = searchName.trim().length > 0;
     const hasNIMInput = searchNIM.trim().length > 0;
-    const hasDateInput = startDate.trim().length > 0 || endDate.trim().length > 0;
+    const hasDateInput = searchDate.trim().length > 0;
     
     if (!hasNameInput && !hasNIMInput && !hasDateInput) {
       Alert.alert('Error', 'Masukkan nama, NIM, atau tanggal untuk mencari');
@@ -134,13 +153,8 @@ export default function SearchScreen() {
     }
     
     // Validasi tanggal jika diisi
-    if ((startDate && !isValidDate(startDate)) || (endDate && !isValidDate(endDate))) {
+    if (searchDate && !isValidDate(searchDate)) {
       Alert.alert('Error', 'Format tanggal harus YYYY-MM-DD (contoh: 2026-06-07)');
-      return;
-    }
-    
-    if (startDate && endDate && startDate > endDate) {
-      Alert.alert('Error', 'Tanggal awal harus lebih kecil dari tanggal akhir');
       return;
     }
     
@@ -195,8 +209,7 @@ export default function SearchScreen() {
   const handleReset = () => {
     setSearchName('');
     setSearchNIM('');
-    setStartDate('');
-    setEndDate('');
+    setSearchDate('');
     setNameSearchResults([]);
     setAttendanceResults([]);
     setStudentInfo(null);
@@ -269,7 +282,6 @@ export default function SearchScreen() {
             value={searchName}
             onChangeText={setSearchName}
           />
-        
         </View>
 
         {/* Separator */}
@@ -295,33 +307,17 @@ export default function SearchScreen() {
             />
           </View>
 
-          <View style={styles.dateRangeContainer}>
-            <Text style={styles.subLabel}>Filter Tanggal</Text>
-            <View style={styles.dateRangeRow}>
-              <View style={styles.dateInputWrapper}>
-                <Text style={styles.dateLabel}>Dari</Text>
-                <TextInput
-                  style={styles.dateInput}
-                  placeholder="2024-01-01"
-                  placeholderTextColor={colors.outline}
-                  value={startDate}
-                  onChangeText={setStartDate}
-                />
-              </View>
-              <View style={styles.dateInputWrapper}>
-                <Text style={styles.dateLabel}>Sampai</Text>
-                <TextInput
-                  style={styles.dateInput}
-                  placeholder="2024-12-31"
-                  placeholderTextColor={colors.outline}
-                  value={endDate}
-                  onChangeText={setEndDate}
-                />
-              </View>
-            </View>
+          <View style={styles.inputContainer}>
+            <Text style={styles.subLabel}>Tanggal</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="2026-06-07"
+              placeholderTextColor={colors.outline}
+              value={searchDate}
+              onChangeText={setSearchDate}
+            />
             <Text style={styles.dateHint}>Format: YYYY-MM-DD (contoh: 2026-06-07)</Text>
           </View>
-        
         </View>
 
         {/* Tombol Aksi */}
@@ -480,31 +476,6 @@ const styles = StyleSheet.create({
     color: colors.outline,
     marginHorizontal: spacing.md,
   },
-  dateRangeContainer: {
-    marginBottom: spacing.md,
-  },
-  dateRangeRow: {
-    flexDirection: 'row',
-    gap: spacing.md,
-  },
-  dateInputWrapper: {
-    flex: 1,
-  },
-  dateLabel: {
-    ...typography.labelSmall,
-    color: colors.outline,
-    marginBottom: 2,
-  },
-  dateInput: {
-    height: spacing.touchTarget,
-    borderWidth: 1,
-    borderColor: colors.outlineVariant,
-    borderRadius: 8,
-    paddingHorizontal: spacing.md,
-    ...typography.bodyMedium,
-    color: colors.onSurface,
-    backgroundColor: colors.surfaceContainerLowest,
-  },
   dateHint: {
     ...typography.labelSmall,
     color: colors.outline,
@@ -553,7 +524,6 @@ const styles = StyleSheet.create({
     color: colors.primary,
     marginBottom: spacing.sm,
   },
-  // Result Item (Name Search)
   resultItem: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -591,7 +561,6 @@ const styles = StyleSheet.create({
     color: colors.outline,
     marginTop: 2,
   },
-  // Attendance Results
   studentInfoCard: {
     padding: spacing.md,
     marginBottom: spacing.md,

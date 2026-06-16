@@ -52,16 +52,14 @@ export default function DashboardScreen() {
       </View>
 
       <View style={styles.statsContainer}>
-        
-
         <Card style={styles.statCard}>
           <Text style={[styles.statNumber, styles.hadirNumber]}>{stats?.hadir || 0}</Text>
-          <Text style={styles.statLabel}>HADIR HARI INI</Text>
-          <Text style={styles.statPercent}>{stats?.persentaseHadir?.toFixed(1) || 0}%</Text>
+          <Text style={styles.statLabel}>HADIR BULAN INI</Text>
+          <Text style={styles.statPercent}>{stats?.persentase_hadir?.toFixed(1) || 0}%</Text>
         </Card>
 
         <Card style={styles.statCard}>
-          <Text style={[styles.statNumber, styles.tidakHadirNumber]}>{stats?.tidakHadir || 0}</Text>
+          <Text style={[styles.statNumber, styles.tidakHadirNumber]}>{stats?.tidak_hadir || 0}</Text>
           <Text style={styles.statLabel}>TIDAK HADIR</Text>
           <Text style={styles.statSubLabel}>📍 Perlu Tindak Lanjut</Text>
         </Card>
@@ -77,7 +75,6 @@ export default function DashboardScreen() {
         <WeeklyChart data={weeklyData} />
       </View>
 
-    
     </ScrollView>
   );
 }

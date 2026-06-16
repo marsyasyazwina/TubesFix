@@ -66,3 +66,25 @@ func InsertionSortByPercentage(stats []models.StudentStatsResponse, ascending bo
 
 	return arr
 }
+
+// Insertion Sort untuk mengurutkan data absensi berdasarkan tanggal (ascending)
+// digunakan sebagai persiapan sebelum Binary Search dijalankan
+func insertionSortAttendanceByDate(arr []models.Attendance) {
+	n := len(arr)
+	for i := 1; i < n; i++ {
+		current := arr[i]
+		j := i - 1
+		shouldShift := true
+
+		for j >= 0 && shouldShift {
+			if arr[j].Date > current.Date {
+				arr[j+1] = arr[j]
+				j = j - 1
+			} else {
+				shouldShift = false
+			}
+		}
+
+		arr[j+1] = current
+	}
+}

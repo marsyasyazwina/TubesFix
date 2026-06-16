@@ -3,6 +3,7 @@ package main
 import (
 	"backend-absensi/controllers"
 	"log"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -40,8 +41,6 @@ func main() {
 		attendanceRoutes.GET("/date", controllers.GetAttendanceByDate)
 		attendanceRoutes.GET("/search", controllers.SearchAttendanceByStudent)
 		attendanceRoutes.POST("/", controllers.CreateAttendance)
-		attendanceRoutes.PUT("/:id", controllers.UpdateAttendance)
-		attendanceRoutes.DELETE("/:id", controllers.DeleteAttendance)
 	}
 
 	statsRoutes := router.Group("/api/stats")

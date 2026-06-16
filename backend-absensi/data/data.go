@@ -4,6 +4,9 @@ import (
 	"backend-absensi/models"
 )
 
+const MaxStudents = 50
+const MaxAttendances = 500
+
 var Students [50]models.Student
 var StudentCount = 15
 

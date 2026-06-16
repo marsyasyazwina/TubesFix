@@ -119,48 +119,10 @@ func UpdateAttendance(c *gin.Context) {
 	})
 }
 
-func DeleteAttendance(c *gin.Context) {
-	id := c.Param("id")
-
-	found := false
-	nim := ""
-	for i := 0; i < data.AttendanceCount; i++ {
-		if data.Attendances[i].ID == id {
-			found = true
-			nim = data.Attendances[i].NIM
-			for j := i; j < data.AttendanceCount-1; j++ {
-				data.Attendances[j] = data.Attendances[j+1]
-			}
-			data.Attendances[data.AttendanceCount-1] = models.Attendance{}
-			data.AttendanceCount--
-		}
-	}
-
-	if !found {
-		c.JSON(http.StatusNotFound, models.Response{
-			Status:  404,
-			Message: "Attendance not found",
-		})
-		return
-	}
-
-	updateStudentPercentage(nim)
-
-	c.JSON(http.StatusOK, models.Response{
-		Status:  200,
-		Message: "Attendance deleted successfully",
-	})
-}
-
 func SearchAttendanceByStudent(c *gin.Context) {
 	name := c.Query("name")
 
-	students := make([]models.Student, data.StudentCount)
-	for i := 0; i < data.StudentCount; i++ {
-		students[i] = data.Students[i]
-	}
-
-	results := utils.SequentialSearchByName(students, name)
+	results := utils.SequentialSearchByName(data.Students, data.StudentCount, name)
 
 	c.JSON(http.StatusOK, models.Response{
 		Status:  200,
@@ -178,7 +140,10 @@ func generateAttendanceID() string {
 func updateStudentPercentage(nim string) {
 	total := 0
 	hadir := 0
-	perBulan := make(map[string]struct{ hadir int; total int })
+	perBulan := make(map[string]struct {
+		hadir int
+		total int
+	})
 
 	for i := 0; i < data.AttendanceCount; i++ {
 		if data.Attendances[i].NIM == nim {

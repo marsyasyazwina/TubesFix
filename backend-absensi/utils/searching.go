@@ -2,18 +2,20 @@ package utils
 
 import (
 	"backend-absensi/models"
-	"sort"
 )
 
 // Sequential Search untuk mencari siswa berdasarkan nama (tanpa break/continue)
-func SequentialSearchByName(students []models.Student, searchName string) []models.Student {
+func SequentialSearchByName(students [50]models.Student, count int, searchName string) []models.Student {
 	var results []models.Student
 
 	if searchName == "" {
-		return students
+		for i := 0; i < count; i++ {
+			results = append(results, students[i])
+		}
+		return results
 	}
 
-	for i := 0; i < len(students); i++ {
+	for i := 0; i < count; i++ {
 		isMatch := true
 		searchLower := toLower(searchName)
 		nameLower := toLower(students[i].Name)
@@ -38,13 +40,11 @@ func SequentialSearchByName(students []models.Student, searchName string) []mode
 
 // Binary Search untuk mencari absensi berdasarkan tanggal (data harus terurut)
 func BinarySearchByDate(attendances []models.Attendance, searchDate string) *models.Attendance {
-	// Sort data terlebih dahulu
 	sorted := make([]models.Attendance, len(attendances))
 	copy(sorted, attendances)
 
-	sort.Slice(sorted, func(i, j int) bool {
-		return sorted[i].Date < sorted[j].Date
-	})
+	// Urutkan dulu dengan Insertion Sort manual (tanpa library)
+	insertionSortAttendanceByDate(sorted)
 
 	left := 0
 	right := len(sorted) - 1
