@@ -14,7 +14,15 @@ import typography from '../styles/typography';
 import spacing from '../styles/spacing';
 import Card from '../components/Card';
 
-const API_BASE_URL = 'http://localhost:8080/api';
+// ============ PERBAIKAN 1: API URL Dinamis ============
+const getApiBaseUrl = () => {
+  if (Platform.OS === 'android') {
+    return 'http://10.0.2.2:8080/api';  // Android Emulator
+  }
+  return 'http://localhost:8080/api';   // iOS / Web
+};
+
+const API_BASE_URL = getApiBaseUrl();
 
 const RankingItem = ({ rank, name, nim, persentase, totalHadir, totalTidak }) => {
   const getRankColor = () => {
@@ -62,10 +70,17 @@ export default function StatsScreen() {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
 
+  // ============ PERBAIKAN 2: Tambah console.log untuk debugging ============
   const loadRanking = async (sort = 'desc') => {
     try {
+      console.log('📊 Fetching ranking with sort:', sort);
+      console.log('📊 URL:', `${API_BASE_URL}/stats/ranking?sort=${sort}`);
+      
       const response = await fetch(`${API_BASE_URL}/stats/ranking?sort=${sort}`);
+      console.log('📊 Response status:', response.status);
+      
       const data = await response.json();
+      console.log('📊 Ranking data:', JSON.stringify(data));
       
       if (data.status === 200 && data.data && data.data.length > 0) {
         setRanking(data.data);
@@ -77,19 +92,26 @@ export default function StatsScreen() {
           averagePercentage: avg,
           totalStudents: data.data.length
         }));
+        console.log('✅ Ranking loaded successfully!');
       } else {
+        console.log('❌ No ranking data available');
         setRanking([]);
       }
     } catch (error) {
-      console.error('Error loading ranking:', error);
+      console.error('❌ Error loading ranking:', error.message);
       setRanking([]);
     }
   };
 
   const loadSummary = async () => {
     try {
+      console.log('📊 Fetching summary stats:', `${API_BASE_URL}/stats/today`);
+      
       const response = await fetch(`${API_BASE_URL}/stats/today`);
+      console.log('📊 Summary response status:', response.status);
+      
       const data = await response.json();
+      console.log('📊 Summary data:', JSON.stringify(data));
       
       if (data.status === 200 && data.data) {
         const stats = data.data;
@@ -102,9 +124,10 @@ export default function StatsScreen() {
           totalTidakHadir: stats.tidak_hadir || 0,
           izinSakit: izinSakitPersen.toFixed(1)
         }));
+        console.log('✅ Summary loaded successfully!');
       }
     } catch (error) {
-      console.error('Error loading summary:', error);
+      console.error('❌ Error loading summary:', error.message);
     }
   };
 
@@ -216,18 +239,7 @@ export default function StatsScreen() {
         )}
       </View>
 
-      <Card style={styles.infoCard}>
-        <Text style={styles.infoTitle}>ℹ️ Informasi</Text>
-        <Text style={styles.infoText}>
-          • Persentase kehadiran dihitung berdasarkan total kehadiran (Hadir) dibagi total pertemuan
-        </Text>
-        <Text style={styles.infoText}>
-          • Data diperbarui secara otomatis setiap kali absensi diinput
-        </Text>
-        <Text style={styles.infoText}>
-          • Gunakan tombol sorting untuk mengubah urutan peringkat
-        </Text>
-      </Card>
+    
     </ScrollView>
   );
 }

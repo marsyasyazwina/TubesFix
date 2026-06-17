@@ -297,3 +297,230 @@
 {"_e":"devserver:start","_t":1781651969821,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
 {"_e":"metro:config","_t":1781651970718,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
 {"_e":"metro:instantiate","_t":1781651977915,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1781652052110,"id":"1","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781652052110,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781652052159,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781652052278,"id":"1","progress":0.04000000000000001,"total":6,"current":2}
+{"_e":"metro:bundling:progress","_t":1781652052382,"id":"1","progress":0.16000000000000003,"total":9,"current":4}
+{"_e":"metro:bundling:progress","_t":1781652052495,"id":"1","progress":0.16000000000000003,"total":10,"current":4}
+{"_e":"metro:bundling:progress","_t":1781652052603,"id":"1","progress":0.21006944444444442,"total":24,"current":11}
+{"_e":"metro:bundling:progress","_t":1781652052706,"id":"1","progress":0.21006944444444442,"total":92,"current":34}
+{"_e":"metro:bundling:progress","_t":1781652052805,"id":"1","progress":0.2672960340598825,"total":147,"current":76}
+{"_e":"metro:bundling:progress","_t":1781652052905,"id":"1","progress":0.2672960340598825,"total":207,"current":106}
+{"_e":"metro:bundling:progress","_t":1781652053005,"id":"1","progress":0.536239072478145,"total":254,"current":186}
+{"_e":"metro:bundling:progress","_t":1781652053105,"id":"1","progress":0.5858862978204541,"total":324,"current":248}
+{"_e":"metro:bundling:progress","_t":1781652053226,"id":"1","progress":0.7040051238852416,"total":379,"current":318}
+{"_e":"metro:bundling:progress","_t":1781652053329,"id":"1","progress":0.7228917581600799,"total":434,"current":369}
+{"_e":"metro:bundling:progress","_t":1781652053430,"id":"1","progress":0.8338252290415226,"total":449,"current":410}
+{"_e":"metro:bundling:progress","_t":1781652053638,"id":"1","progress":0.8721727942680748,"total":469,"current":438}
+{"_e":"metro:bundling:progress","_t":1781652053643,"id":"1","progress":0.8761598647032884,"total":469,"current":439}
+{"_e":"metro:bundling:progress","_t":1781652053749,"id":"1","progress":0.8835221549237213,"total":483,"current":454}
+{"_e":"metro:bundling:progress","_t":1781652053950,"id":"1","progress":0.9917526125264668,"total":484,"current":482}
+{"_e":"metro:bundling:progress","_t":1781652054650,"id":"1","progress":0.9958720374291372,"total":484,"current":483}
+{"_e":"metro:bundling:progress","_t":1781652054864,"id":"1","progress":0.999,"total":484,"current":484}
+{"_e":"metro:bundling:done","_t":1781652054999,"id":"1","total":484,"ms":2888.6988}
+{"_e":"metro:client_log","_t":1781652055375,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781652055376,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781652055430,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1781652056739,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781652056758,"level":"log","data":["Students loaded:","15"]}
+{"_e":"metro:client_log","_t":1781652056759,"level":"log","data":["Rankings loaded:","15"]}
+{"_e":"metro:bundling:started","_t":1781652233827,"id":"3","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781652233827,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781652233860,"id":"3","total":1,"ms":32.7063}
+{"_e":"metro:client_log","_t":1781652234064,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781652234064,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781652234074,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1781652237724,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781652237737,"level":"log","data":["Students loaded:","15"]}
+{"_e":"metro:client_log","_t":1781652237737,"level":"log","data":["Rankings loaded:","15"]}
+{"_e":"metro:bundling:started","_t":1781652315465,"id":"4","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781652315465,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781652315491,"id":"4","total":1,"ms":26.2575}
+{"_e":"metro:client_log","_t":1781652315673,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781652315673,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781652315679,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1781652381399,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781652381410,"level":"log","data":["Students loaded:","15"]}
+{"_e":"metro:client_log","_t":1781652381411,"level":"log","data":["Rankings loaded:","15"]}
+{"_e":"metro:bundling:started","_t":1781652386277,"id":"5","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781652386277,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781652386308,"id":"5","total":1,"ms":30.6248}
+{"_e":"metro:client_log","_t":1781652386511,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781652386511,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781652386519,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:bundling:started","_t":1781652512830,"id":"6","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781652512831,"id":"6","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781652512856,"id":"6","total":1,"ms":25.189}
+{"_e":"metro:client_log","_t":1781652513048,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781652513048,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781652513057,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:bundling:started","_t":1781652615351,"id":"7","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781652615352,"id":"7","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781652615376,"id":"7","total":1,"ms":24.4047}
+{"_e":"metro:client_log","_t":1781652615549,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781652615549,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781652615557,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:bundling:failed","_t":1781653364488,"id":null,"message":"SyntaxError: C:\\Users\\belajar\\TubesFix\\absensi-mahasiswa\\src\\services\\api.js: Lexical declaration cannot appear in a single-statement context. (9:8)\n\n   7 | //   - Mac/Linux: buka Terminal → ketik `ifconfig` → lihat \"inet\"\n   8 | //\n>  9 | Contoh: const API_BASE_URL = 'http://192.168.1.100:8080/api';\n     |         ^\n  10 | //\n  11 | // Kalau pakai emulator Android bawaan Android Studio, pakai:\n  12 | //   const API_BASE_URL = 'http://10.0.2.2:8080/api';","importStack":null,"filename":"src\\services\\api.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1781653364491,"level":"error","data":["[TransformError: SyntaxError: C:\\Users\\belajar\\TubesFix\\absensi-mahasiswa\\src\\services\\api.js: Lexical declaration cannot appear in a single-statement context. (9:8)\n\n   7 | //   - Mac/Linux: buka Terminal → ketik `ifconfig` → lihat \"inet\"\n   8 | //\n>  9 | Contoh: const API_BASE_URL = 'http://192.168.1.100:8080/api';\n     |         ^\n  10 | //\n  11 | // Kalau pakai emulator Android bawaan Android Studio, pakai:\n  12 | //   const API_BASE_URL = 'http://10.0.2.2:8080/api';]"]}
+{"_e":"metro:bundling:failed","_t":1781653364691,"id":null,"message":"SyntaxError: C:\\Users\\belajar\\TubesFix\\absensi-mahasiswa\\src\\services\\api.js: Lexical declaration cannot appear in a single-statement context. (9:8)\n\n   7 | //   - Mac/Linux: buka Terminal → ketik `ifconfig` → lihat \"inet\"\n   8 | //\n>  9 | Contoh: const API_BASE_URL = 'http://192.168.1.100:8080/api';\n     |         ^\n  10 | //\n  11 | // Kalau pakai emulator Android bawaan Android Studio, pakai:\n  12 | //   const API_BASE_URL = 'http://10.0.2.2:8080/api';","importStack":null,"filename":"src\\services\\api.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1781653364693,"level":"error","data":["[TransformError: SyntaxError: C:\\Users\\belajar\\TubesFix\\absensi-mahasiswa\\src\\services\\api.js: Lexical declaration cannot appear in a single-statement context. (9:8)\n\n   7 | //   - Mac/Linux: buka Terminal → ketik `ifconfig` → lihat \"inet\"\n   8 | //\n>  9 | Contoh: const API_BASE_URL = 'http://192.168.1.100:8080/api';\n     |         ^\n  10 | //\n  11 | // Kalau pakai emulator Android bawaan Android Studio, pakai:\n  12 | //   const API_BASE_URL = 'http://10.0.2.2:8080/api';]"]}
+{"_e":"metro:bundling:started","_t":1781653367689,"id":"8","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781653367689,"id":"8","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781653367690,"id":"8","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1781653367694,"id":"8","message":"SyntaxError: C:\\Users\\belajar\\TubesFix\\absensi-mahasiswa\\src\\services\\api.js: Lexical declaration cannot appear in a single-statement context. (9:8)\n\n   7 | //   - Mac/Linux: buka Terminal → ketik `ifconfig` → lihat \"inet\"\n   8 | //\n>  9 | Contoh: const API_BASE_URL = 'http://192.168.1.100:8080/api';\n     |         ^\n  10 | //\n  11 | // Kalau pakai emulator Android bawaan Android Studio, pakai:\n  12 | //   const API_BASE_URL = 'http://10.0.2.2:8080/api';","importStack":null,"filename":"src\\services\\api.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1781653369551,"id":"9","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781653369551,"id":"9","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781653369552,"id":"9","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1781653369556,"id":"9","message":"SyntaxError: C:\\Users\\belajar\\TubesFix\\absensi-mahasiswa\\src\\services\\api.js: Lexical declaration cannot appear in a single-statement context. (9:8)\n\n   7 | //   - Mac/Linux: buka Terminal → ketik `ifconfig` → lihat \"inet\"\n   8 | //\n>  9 | Contoh: const API_BASE_URL = 'http://192.168.1.100:8080/api';\n     |         ^\n  10 | //\n  11 | // Kalau pakai emulator Android bawaan Android Studio, pakai:\n  12 | //   const API_BASE_URL = 'http://10.0.2.2:8080/api';","importStack":null,"filename":"src\\services\\api.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1781653370168,"id":"a","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781653370168,"id":"a","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781653370169,"id":"a","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1781653370173,"id":"a","message":"SyntaxError: C:\\Users\\belajar\\TubesFix\\absensi-mahasiswa\\src\\services\\api.js: Lexical declaration cannot appear in a single-statement context. (9:8)\n\n   7 | //   - Mac/Linux: buka Terminal → ketik `ifconfig` → lihat \"inet\"\n   8 | //\n>  9 | Contoh: const API_BASE_URL = 'http://192.168.1.100:8080/api';\n     |         ^\n  10 | //\n  11 | // Kalau pakai emulator Android bawaan Android Studio, pakai:\n  12 | //   const API_BASE_URL = 'http://10.0.2.2:8080/api';","importStack":null,"filename":"src\\services\\api.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1781653370356,"id":"b","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781653370356,"id":"b","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781653370357,"id":"b","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1781653370361,"id":"b","message":"SyntaxError: C:\\Users\\belajar\\TubesFix\\absensi-mahasiswa\\src\\services\\api.js: Lexical declaration cannot appear in a single-statement context. (9:8)\n\n   7 | //   - Mac/Linux: buka Terminal → ketik `ifconfig` → lihat \"inet\"\n   8 | //\n>  9 | Contoh: const API_BASE_URL = 'http://192.168.1.100:8080/api';\n     |         ^\n  10 | //\n  11 | // Kalau pakai emulator Android bawaan Android Studio, pakai:\n  12 | //   const API_BASE_URL = 'http://10.0.2.2:8080/api';","importStack":null,"filename":"src\\services\\api.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1781653383755,"id":"c","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781653383755,"id":"c","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781653383756,"id":"c","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781653383797,"id":"c","total":1,"ms":42.206}
+{"_e":"metro:client_log","_t":1781653383974,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781653383974,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781653383978,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1781653385943,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781653385954,"level":"log","data":["Students loaded:","15"]}
+{"_e":"metro:client_log","_t":1781653385954,"level":"log","data":["Rankings loaded:","15"]}
+{"_e":"metro:bundling:started","_t":1781653501961,"id":"d","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781653501961,"id":"d","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781653501984,"id":"d","total":1,"ms":23.2554}
+{"_e":"metro:client_log","_t":1781653502159,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781653502159,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781653502164,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1781653503363,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781653503376,"level":"log","data":["Students loaded:","15"]}
+{"_e":"metro:client_log","_t":1781653503376,"level":"log","data":["Rankings loaded:","15"]}
+{"_e":"metro:bundling:started","_t":1781655984148,"id":"e","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781655984148,"id":"e","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781655984176,"id":"e","total":1,"ms":27.97}
+{"_e":"metro:client_log","_t":1781655984361,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781655984361,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781655984371,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1781655985447,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781655985460,"level":"log","data":["Students loaded:","15"]}
+{"_e":"metro:client_log","_t":1781655985460,"level":"log","data":["Rankings loaded:","15"]}
+{"_e":"metro:client_log","_t":1781656005252,"level":"log","data":["POST /students body:","{\"name\":\"Zahra\",\"class\":\"TI-2C\",\"major\":\"Teknik Informatika\"}"]}
+{"_e":"metro:client_log","_t":1781656005290,"level":"log","data":["POST /students result:","{\"status\":201,\"message\":\"Student created successfully\",\"data\":{\"nim\":\"Seda30347\",\"name\":\"Zahra\",\"class\":\"TI-2C\",\"major\":\"Teknik Informatika\",\"persentase_kehadiran\":0,\"persentase_per_bulan\":null}}"]}
+{"_e":"metro:client_log","_t":1781656005290,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781656005306,"level":"log","data":["Students loaded:","16"]}
+{"_e":"metro:client_log","_t":1781656005306,"level":"log","data":["Rankings loaded:","16"]}
+{"_e":"metro:bundling:started","_t":1781656044508,"id":"g","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781656044508,"id":"g","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781656044533,"id":"g","total":1,"ms":24.5448}
+{"_e":"metro:client_log","_t":1781656044731,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781656044731,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781656044739,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1781656045585,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781656045597,"level":"log","data":["Students loaded:","16"]}
+{"_e":"metro:client_log","_t":1781656045597,"level":"log","data":["Rankings loaded:","16"]}
+{"_e":"metro:client_log","_t":1781656060788,"level":"log","data":["POST /students body:","{\"name\":\"Zzz\",\"class\":\"TI-2C\",\"major\":\"Jakun\"}"]}
+{"_e":"metro:client_log","_t":1781656060825,"level":"log","data":["POST /students result:","{\"status\":201,\"message\":\"Student created successfully\",\"data\":{\"nim\":\"Se345c344\",\"name\":\"Zzz\",\"class\":\"TI-2C\",\"major\":\"Jakun\",\"persentase_kehadiran\":0,\"persentase_per_bulan\":null}}"]}
+{"_e":"metro:client_log","_t":1781656060825,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781656060840,"level":"log","data":["Students loaded:","17"]}
+{"_e":"metro:client_log","_t":1781656060841,"level":"log","data":["Rankings loaded:","17"]}
+{"_e":"metro:client_log","_t":1781656562400,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781656562424,"level":"log","data":["Students loaded:","17"]}
+{"_e":"metro:client_log","_t":1781656562424,"level":"log","data":["Rankings loaded:","17"]}
+{"_e":"metro:bundling:started","_t":1781656564721,"id":"h","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781656564721,"id":"h","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781656564746,"id":"h","total":1,"ms":25.1799}
+{"_e":"metro:client_log","_t":1781656564919,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781656564920,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781656564927,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1781656566585,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781656566595,"level":"log","data":["Students loaded:","17"]}
+{"_e":"metro:client_log","_t":1781656566595,"level":"log","data":["Rankings loaded:","17"]}
+{"_e":"metro:client_log","_t":1781656662382,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781656662399,"level":"log","data":["Students loaded:","17"]}
+{"_e":"metro:client_log","_t":1781656662400,"level":"log","data":["Rankings loaded:","17"]}
+{"_e":"metro:bundling:started","_t":1781656664728,"id":"i","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781656664728,"id":"i","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781656664750,"id":"i","total":1,"ms":22.0497}
+{"_e":"metro:client_log","_t":1781656664924,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781656664924,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781656664928,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1781656666385,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781656666397,"level":"log","data":["Students loaded:","17"]}
+{"_e":"metro:client_log","_t":1781656666397,"level":"log","data":["Rankings loaded:","17"]}
+{"_e":"metro:client_log","_t":1781656668177,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781656668188,"level":"log","data":["Students loaded:","17"]}
+{"_e":"metro:client_log","_t":1781656668189,"level":"log","data":["Rankings loaded:","17"]}
+{"_e":"metro:client_log","_t":1781656669857,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781656669868,"level":"log","data":["Students loaded:","17"]}
+{"_e":"metro:client_log","_t":1781656669868,"level":"log","data":["Rankings loaded:","17"]}
+{"_e":"metro:client_log","_t":1781656670393,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781656670403,"level":"log","data":["Students loaded:","17"]}
+{"_e":"metro:client_log","_t":1781656670403,"level":"log","data":["Rankings loaded:","17"]}
+{"_e":"metro:client_log","_t":1781656672209,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781656672219,"level":"log","data":["Students loaded:","17"]}
+{"_e":"metro:client_log","_t":1781656672219,"level":"log","data":["Rankings loaded:","17"]}
+{"_e":"metro:bundling:started","_t":1781656777451,"id":"j","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781656777451,"id":"j","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781656777476,"id":"j","total":1,"ms":25.3902}
+{"_e":"metro:client_log","_t":1781656777649,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781656777650,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781656777655,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1781656786508,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781656786523,"level":"log","data":["Students loaded:","17"]}
+{"_e":"metro:client_log","_t":1781656786524,"level":"log","data":["Rankings loaded:","17"]}
+{"_e":"metro:bundling:started","_t":1781656791360,"id":"k","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781656791360,"id":"k","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781656791384,"id":"k","total":1,"ms":23.8599}
+{"_e":"metro:client_log","_t":1781656791549,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781656791549,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781656791557,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:bundling:started","_t":1781656818096,"id":"l","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781656818096,"id":"l","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781656818125,"id":"l","total":1,"ms":28.9717}
+{"_e":"metro:client_log","_t":1781656818357,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781656818358,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781656818364,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:bundling:started","_t":1781656848410,"id":"m","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781656848411,"id":"m","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781656848433,"id":"m","total":1,"ms":22.8891}
+{"_e":"metro:client_log","_t":1781656848615,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781656848615,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781656848620,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:bundling:started","_t":1781656851138,"id":"n","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781656851138,"id":"n","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781656851162,"id":"n","total":1,"ms":23.6696}
+{"_e":"metro:client_log","_t":1781656851335,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781656851336,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781656851343,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:bundling:started","_t":1781656873147,"id":"o","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781656873147,"id":"o","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781656873169,"id":"o","total":1,"ms":22.6554}
+{"_e":"metro:client_log","_t":1781656873347,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781656873348,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781656873353,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:bundling:started","_t":1781656919361,"id":"p","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781656919361,"id":"p","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781656919384,"id":"p","total":1,"ms":23.238}
+{"_e":"metro:client_log","_t":1781656919558,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781656919558,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781656919565,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1781656925181,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781656925193,"level":"log","data":["Students loaded:","17"]}
+{"_e":"metro:client_log","_t":1781656925193,"level":"log","data":["Rankings loaded:","17"]}
+{"_e":"metro:client_log","_t":1781657283537,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781657283550,"level":"log","data":["Students loaded:","17"]}
+{"_e":"metro:client_log","_t":1781657283550,"level":"log","data":["Rankings loaded:","17"]}
+{"_e":"metro:client_log","_t":1781657286761,"level":"log","data":["Loading data from API:","http://localhost:8080/api"]}
+{"_e":"metro:client_log","_t":1781657286772,"level":"log","data":["Students loaded:","17"]}
+{"_e":"metro:client_log","_t":1781657286772,"level":"log","data":["Rankings loaded:","17"]}
+{"_e":"metro:bundling:started","_t":1781657343599,"id":"q","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781657343599,"id":"q","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781657343626,"id":"q","total":1,"ms":27.1573}
+{"_e":"metro:client_log","_t":1781657343848,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1781657343848,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1781657343859,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}

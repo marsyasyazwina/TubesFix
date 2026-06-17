@@ -128,19 +128,6 @@ export const api = {
     }
   },
 
-  // deleteAttendance: async (id) => {
-  //   try {
-  //     const response = await fetchWithTimeout(`${API_BASE_URL}/attendances/${id}`, {
-  //       method: 'DELETE',
-  //       headers: { 'Content-Type': 'application/json' },
-  //     });
-  //     const data = await response.json();
-  //     return data;
-  //   } catch (error) {
-  //     console.error('Error deleting attendance:', error);
-  //     return { status: 500, message: error.message };
-  //   }
-  // },
 
   getAttendanceByDate: async (date) => {
     try {

@@ -41,18 +41,23 @@ export default function DataScreen() {
   const [selectedStatus, setSelectedStatus] = useState('');
   const [saving, setSaving] = useState(false);
 
+  // TAMBAH: state untuk sorting
+  const [sortType, setSortType] = useState('asc');
+
   const [newStudent, setNewStudent] = useState({ name: '', class: '', major: '' });
   const [editingStudent, setEditingStudent] = useState({ nim: '', name: '', class: '', major: '' });
 
   const todayDate = getTodayDate();
   const statusOptions = ['Hadir', 'Tidak Hadir', 'Izin', 'Sakit'];
 
-  const loadData = async () => {
+  // UBAH: loadData dengan parameter sort
+  const loadData = async (sort = 'asc') => {
     try {
       setLoading(true);
       console.log('Loading data from API:', API_BASE_URL);
 
-      const studentsRes = await fetch(`${API_BASE_URL}/students/`);
+      // Panggil API dengan parameter sort
+      const studentsRes = await fetch(`${API_BASE_URL}/students/?sort=${sort}`);
       if (!studentsRes.ok) throw new Error(`Students fetch failed: ${studentsRes.status}`);
       const studentsData = await studentsRes.json();
       setStudents(studentsData.data || []);
@@ -78,13 +83,19 @@ export default function DataScreen() {
     }
   };
 
+  // TAMBAH: fungsi untuk ganti sorting
+  const handleSort = (type) => {
+    setSortType(type);
+    loadData(type);
+  };
+
   useEffect(() => {
-    loadData();
+    loadData('asc');
   }, []);
 
   const onRefresh = () => {
     setRefreshing(true);
-    loadData();
+    loadData(sortType);
   };
 
   const getPersentase = (nim) => {
@@ -121,7 +132,7 @@ export default function DataScreen() {
         Alert.alert('Berhasil', 'Mahasiswa ditambahkan');
         setAddModalVisible(false);
         setNewStudent({ name: '', class: '', major: '' });
-        await loadData();
+        await loadData(sortType);
       } else {
         Alert.alert('Error', result.message || 'Gagal menambah');
       }
@@ -134,32 +145,33 @@ export default function DataScreen() {
   };
 
   const handleDeleteStudent = async (student) => {
-  console.log('Hapus student:', JSON.stringify(student));
+    console.log('Hapus student:', JSON.stringify(student));
 
-  setSaving(true);
-  try {
-    const url = `${API_BASE_URL}/students/${student.nim}`;
-    console.log('DELETE URL:', url);
+    setSaving(true);
+    try {
+      const url = `${API_BASE_URL}/students/${student.nim}`;
+      console.log('DELETE URL:', url);
 
-    const response = await fetch(url, { method: 'DELETE' });
+      const response = await fetch(url, { method: 'DELETE' });
 
-    console.log('DELETE response status:', response.status);
-    const text = await response.text();
-    console.log('DELETE response text:', text);
+      console.log('DELETE response status:', response.status);
+      const text = await response.text();
+      console.log('DELETE response text:', text);
 
-    if (response.ok) {
-      Alert.alert('Berhasil', `${student.name} berhasil dihapus`);
-      await loadData();
-    } else {
-      Alert.alert('Gagal', `Status: ${response.status} - ${text}`);
+      if (response.ok) {
+        Alert.alert('Berhasil', `${student.name} berhasil dihapus`);
+        await loadData(sortType);
+      } else {
+        Alert.alert('Gagal', `Status: ${response.status} - ${text}`);
+      }
+    } catch (error) {
+      console.error('Delete error:', error);
+      Alert.alert('Error', `${error.message}`);
+    } finally {
+      setSaving(false);
     }
-  } catch (error) {
-    console.error('Delete error:', error);
-    Alert.alert('Error', `${error.message}`);
-  } finally {
-    setSaving(false);
-  }
-};
+  };
+
   const handleEditStudent = (student) => {
     setEditingStudent({
       nim: student.nim,
@@ -196,7 +208,7 @@ export default function DataScreen() {
       if (response.ok) {
         Alert.alert('Berhasil', 'Data mahasiswa diupdate');
         setEditModalVisible(false);
-        await loadData();
+        await loadData(sortType);
       } else {
         const result = await response.json();
         Alert.alert('Error', result.message || 'Gagal update');
@@ -250,7 +262,7 @@ export default function DataScreen() {
         setModalVisible(false);
         setSelectedStudent(null);
         setSelectedStatus('');
-        await loadData();
+        await loadData(sortType);
       } else {
         Alert.alert('Error', 'Gagal menyimpan');
       }
@@ -285,9 +297,26 @@ export default function DataScreen() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Data Mahasiswa</Text>
-        <TouchableOpacity style={styles.addButton} onPress={() => setAddModalVisible(true)}>
-          <Text style={styles.addButtonText}>+ Tambah</Text>
-        </TouchableOpacity>
+        <View style={styles.headerRight}>
+          {/* TAMBAH: Tombol Sort A-Z */}
+          <TouchableOpacity 
+            style={[styles.sortButton, sortType === 'asc' && styles.sortButtonActive]} 
+            onPress={() => handleSort('asc')}>
+            <Text style={[styles.sortButtonText, sortType === 'asc' && styles.sortButtonTextActive]}>A-Z</Text>
+          </TouchableOpacity>
+          
+          {/* TAMBAH: Tombol Sort Z-A */}
+          <TouchableOpacity 
+            style={[styles.sortButton, sortType === 'desc' && styles.sortButtonActive]} 
+            onPress={() => handleSort('desc')}>
+            <Text style={[styles.sortButtonText, sortType === 'desc' && styles.sortButtonTextActive]}>Z-A</Text>
+          </TouchableOpacity>
+          
+          {/* Tombol Tambah */}
+          <TouchableOpacity style={styles.addButton} onPress={() => setAddModalVisible(true)}>
+            <Text style={styles.addButtonText}>+ Tambah</Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       <View style={styles.statsRow}>
@@ -480,6 +509,36 @@ const styles = StyleSheet.create({
   loadingText: { ...typography.bodyMedium, color: colors.outline, marginTop: spacing.md },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: spacing.md },
   title: { ...typography.headlineMedium, color: colors.onSurface },
+  
+  // TAMBAH: style untuk header right (tempat tombol sort)
+  headerRight: { 
+    flexDirection: 'row', 
+    alignItems: 'center', 
+    gap: 8 
+  },
+  
+  // TAMBAH: style untuk tombol sort
+  sortButton: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 6,
+    backgroundColor: colors.surfaceContainerHighest,
+    borderWidth: 1,
+    borderColor: colors.outlineVariant,
+  },
+  sortButtonActive: {
+    backgroundColor: colors.primary,
+    borderColor: colors.primary,
+  },
+  sortButtonText: {
+    ...typography.labelMedium,
+    color: colors.onSurfaceVariant,
+    fontWeight: '600',
+  },
+  sortButtonTextActive: {
+    color: colors.white,
+  },
+  
   addButton: { backgroundColor: colors.present, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderRadius: 8 },
   addButtonText: { ...typography.labelMedium, color: colors.white },
   statsRow: { flexDirection: 'row', gap: spacing.md, marginBottom: spacing.lg },

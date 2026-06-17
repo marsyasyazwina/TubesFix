@@ -364,35 +364,7 @@ export default function SearchScreen() {
             </Card>
           )}
 
-          {/* Statistik Ringkasan */}
-          {attendanceResults.length > 0 && (
-            <Card style={styles.statsCard}>
-              <Text style={styles.statsTitle}>Ringkasan Kehadiran</Text>
-              <View style={styles.statsRow}>
-                <View style={styles.statItem}>
-                  <Text style={[styles.statNumber, styles.hadirNumber]}>{stats.hadir}</Text>
-                  <Text style={styles.statLabel}>Hadir</Text>
-                </View>
-                <View style={styles.statItem}>
-                  <Text style={[styles.statNumber, styles.tidakHadirNumber]}>{stats.tidakHadir}</Text>
-                  <Text style={styles.statLabel}>Tidak Hadir</Text>
-                </View>
-                <View style={styles.statItem}>
-                  <Text style={[styles.statNumber, styles.izinNumber]}>{stats.izin}</Text>
-                  <Text style={styles.statLabel}>Izin</Text>
-                </View>
-                <View style={styles.statItem}>
-                  <Text style={[styles.statNumber, styles.sakitNumber]}>{stats.sakit}</Text>
-                  <Text style={styles.statLabel}>Sakit</Text>
-                </View>
-              </View>
-              <View style={styles.persentaseContainer}>
-                <Text style={styles.persentaseLabel}>Persentase Kehadiran:</Text>
-                <Text style={styles.persentaseValue}>{stats.persentaseHadir}%</Text>
-              </View>
-              <Text style={styles.totalRecord}>Total {stats.total} catatan kehadiran</Text>
-            </Card>
-          )}
+          
 
           {/* Daftar Kehadiran */}
           {attendanceResults.length > 0 && (
