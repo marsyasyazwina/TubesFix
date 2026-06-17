@@ -4,14 +4,10 @@ import (
 	"backend-absensi/models"
 )
 
-// Sequential Search untuk mencari siswa berdasarkan nama (tanpa break/continue)
 func SequentialSearchByName(students [50]models.Student, count int, searchName string) []models.Student {
 	var results []models.Student
 
 	if searchName == "" {
-		for i := 0; i < count; i++ {
-			results = append(results, students[i])
-		}
 		return results
 	}
 
@@ -38,12 +34,10 @@ func SequentialSearchByName(students [50]models.Student, count int, searchName s
 	return results
 }
 
-// Binary Search untuk mencari absensi berdasarkan tanggal (data harus terurut)
 func BinarySearchByDate(attendances []models.Attendance, searchDate string) *models.Attendance {
 	sorted := make([]models.Attendance, len(attendances))
 	copy(sorted, attendances)
 
-	// Urutkan dulu dengan Insertion Sort manual (tanpa library)
 	insertionSortAttendanceByDate(sorted)
 
 	left := 0
@@ -67,7 +61,6 @@ func BinarySearchByDate(attendances []models.Attendance, searchDate string) *mod
 	return result
 }
 
-// Helper function to lowercase string
 func toLower(s string) string {
 	result := ""
 	for _, c := range s {

@@ -4,7 +4,6 @@ import (
 	"backend-absensi/models"
 )
 
-// Selection Sort untuk sorting berdasarkan nama (tanpa break/continue)
 func SelectionSortByName(students []models.Student, ascending bool) []models.Student {
 	arr := make([]models.Student, len(students))
 	copy(arr, students)
@@ -34,7 +33,6 @@ func SelectionSortByName(students []models.Student, ascending bool) []models.Stu
 	return arr
 }
 
-// Insertion Sort untuk sorting berdasarkan persentase kehadiran (tanpa break/continue)
 func InsertionSortByPercentage(stats []models.StudentStatsResponse, ascending bool) []models.StudentStatsResponse {
 	arr := make([]models.StudentStatsResponse, len(stats))
 	copy(arr, stats)
@@ -67,8 +65,6 @@ func InsertionSortByPercentage(stats []models.StudentStatsResponse, ascending bo
 	return arr
 }
 
-// Insertion Sort untuk mengurutkan data absensi berdasarkan tanggal (ascending)
-// digunakan sebagai persiapan sebelum Binary Search dijalankan
 func insertionSortAttendanceByDate(arr []models.Attendance) {
 	n := len(arr)
 	for i := 1; i < n; i++ {

@@ -12,7 +12,6 @@ import (
 )
 
 func GetStudents(c *gin.Context) {
-	// Copy ke slice untuk sorting
 	students := make([]models.Student, data.StudentCount)
 	for i := 0; i < data.StudentCount; i++ {
 		students[i] = data.Students[i]
@@ -127,7 +126,6 @@ func DeleteStudent(c *gin.Context) {
 	for i := 0; i < data.StudentCount; i++ {
 		if data.Students[i].NIM == nim {
 			found = true
-			// Geser semua elemen ke kiri
 			for j := i; j < data.StudentCount-1; j++ {
 				data.Students[j] = data.Students[j+1]
 			}
