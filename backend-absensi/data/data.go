@@ -45,4 +45,5 @@ func init() {
 	Attendances[12] = models.Attendance{ID: "A013", NIM: "S013", Date: "2026-06-09", Status: "Hadir"}
 	Attendances[13] = models.Attendance{ID: "A014", NIM: "S014", Date: "2026-06-10", Status: "Hadir"}
 	Attendances[14] = models.Attendance{ID: "A015", NIM: "S015", Date: "2026-06-10", Status: "Hadir"}
+
 }
